@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Форма обратной связи emailjs</title>
+      <link rel="stylesheet" href="index/style.css">
+   </head>
+   <body>
+      <!-- БЛОК Обратная связь -->
+      <div class="background_form">
+         <form id="form">
+            <input name="from_name" class="input_form_block" placeholder="Ваше имя" id="from_name" id="textInput"/><!-- Форма имени -->
+            <input name="email_id" class="input_form_block" placeholder="example@mail.com" id="email_id" id="textInput"/><!-- Форма почты -->
+            <input type="text" name="tel_number" class="phone_mask" placeholder="+7 (___) ___-____" id="tel_number" id="textInput"/><!-- Форма телефона -->
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
+            <div class="isNotAlert" id="alert">
+               <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+               Некорректный ввод Имени, Почты или Номера телефона.
+            </div>
+            <div class="confidentiality">Я подтверждаю, что ознакомлен(а) с <a href="documents/privacy-policy.txt">политикой конфиденциальности</a> и даю согласие на обработку моих персональных данных</div>
+            <button class="button" id="send-button" type="submit">Отправить</button>
+         </form>
+         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+         <script type="text/javascript">emailjs.init('qiQxPKTiYT5LSz2z8')</script> <!-- Данный код берётся из (Account -> Public Key) -->
+      </div>
+      <script src="index/script.js"></script>
+   </body>
+</html>
