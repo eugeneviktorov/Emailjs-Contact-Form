@@ -53,6 +53,7 @@ form.addEventListener("submit", (event) => {
 	}
 })
 
+// Валидация(проверка) ввода полей
 function ValidateUsername(username) {
 	if (/^[А-ЯЁ а-яё A-Z a-z]+$/.test(username)) {
 		return (true)
@@ -74,6 +75,31 @@ function ValidateNumber(tel) {
 	return (false)
 }
 
-jQuery(function($) {
-	$(".phone_mask").mask("+7 (999) 999-9999");
+// Маска номера телефона и перемещение курсора в начало ввода
+$.fn.setCursorPosition = function(pos) {
+	if ($(this).get(0).setSelectionRange) {
+		$(this).get(0).setSelectionRange(pos, pos);
+	} else if ($(this).get(0).createTextRange) {
+		var range = $(this).get(0).createTextRange();
+		range.collapse(true);
+		range.moveEnd('character', pos);
+		range.moveStart('character', pos);
+		range.select();
+	}
+};
+
+function rightPos(phone) {
+	for (var i = 0; i < phone.length; i++) {
+		if (phone.charAt(i) == "_") {
+			console.log(phone.charAt(i));
+			return i
+		}
+	}
+	return phone.length - 1
+}
+$(".input_form_phone").click(function() {
+	let phone = $(this).val()
+	$(this).setCursorPosition(rightPos(phone));
+}).mask("+7 (999) 999-99-99", {
+	autoclear: false
 });

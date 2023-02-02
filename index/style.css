@@ -102,7 +102,7 @@ form {
         font-size: 42px;
    }
 }
-.phone_mask{
+.input_form_phone{
     background-color: #E2E2E2;
     border: none;
     outline:none;
@@ -119,23 +119,23 @@ form {
    /* Standard */
 }
 @media (min-width:280px){
-    .phone_mask{
+    .input_form_phone{
         font-size: 20px;
         width: 70%;
    }
 }
 @media (min-width:425px){
-    .phone_mask{
+    .input_form_phone{
         font-size: 22px;
    }
 }
 @media (min-width:768px){
-    .phone_mask{
+    .input_form_phone{
         font-size: 24px;
    }
 }
 @media (min-width:2560px){
-    .phone_mask{
+    .input_form_phone{
         font-size: 42px;
    }
 }
@@ -202,6 +202,9 @@ form {
 }
 .closebtn:hover{
     color: #c4c4c4;
+}
+::placeholder{
+    color: #8d8d8d;
 }
 .confidentiality{
     width: 80%;
