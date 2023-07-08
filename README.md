@@ -1,33 +1,33 @@
-# Форма обратной связи через сервис "EmailJS".
-<img src="img/Screenshot1.png"><br><br><br><br>
+# Feedback form through the "EmailJS" service.
+<img src="README/Screenshot1.png"><br><br><br><br>
 
-## Подключение.
-### 1) Регистрация на сервисе <a href="https://dashboard.emailjs.com">"emailj"</a>
-<img src="img/Screenshot2.png"><br><br><br>
+## Connection.
+### 1. Registration on the service <a href="https://dashboard.emailjs.com/sign-up">"emailj"</a>
+<img src="README/Screenshot2.png"><br><br><br>
 
-### 2) После регистрации переходим в пункт "Email Services".<br> Добавляем удобный для вас сервис. В нашем случае это "Gmail". (Он уже добавлен)
-<img src="img/Screenshot3.png"><br><br>
+### 2. After registration, go to the item "Email Services".<br> Add a service convenient for you. In our case, this is "Gmail". (It's already been added)
+<img src="README/Screenshot3.png"><br><br>
 
-### Берём сервисный код
-<img src="img/Screenshot4.png"><br><br>
+### We take the service code
+<img src="README/Screenshot4.png"><br><br>
 
-### Вставляем его в файл "script.js"
-<img src="img/Screenshot5.png"><br><br><br>
+### Paste it into the "script.js" file
+<img src="README/Screenshot5.png"><br><br><br>
 
-### 3) Переходим обратно в браузер. Вкладка "Email Templates". Выбираем "Create New Template" и создаём такую же форму как на скриншоте. UPD: вы можете выделить текст и выбрать размер шрифта и т.п.
-<img src="img/Screenshot6.png"><br><br>
+### 3. Go back to the browser. Email Templates tab. Select "Create New Template" and create the same form as in the screenshot. UPD: you can highlight text and choose font size etc.
+<img src="README/Screenshot6.png"><br><br>
 
-### Берём сервисный код
-<img src="img/Screenshot7.png"><br><br>
+### We take the service code
+<img src="README/Screenshot7.png"><br><br>
 
-### Вставляем его в файл "script.js"
-<img src="img/Screenshot8.png"><br><br><br>
+### Paste it into the "script.js" file
+<img src="README/Screenshot8.png"><br><br><br>
 
-### 4) И последним кодом станет код аккаунта. Выбираем вкладка "Account" и копируем код "Public Key"
-<img src="img/Screenshot9.png"><br><br>
+### 4. And the last code will be the account code. Select the tab "Account" and copy the code "Public Key"
+<img src="README/Screenshot9.png"><br><br>
 
-### Вставляем его в файл "index.html"
-<img src="img/Screenshot10.png"><br><br><br>
+### Paste it into the "index.html" file
+<img src="README/Screenshot10.png"><br><br><br>
 
-### Если всё удачно подключено, то на почту вам будет приходить форма, которую заполнил пользователь.
-<img src="img/Screenshot11.png">
+### If everything is successfully connected, then the form that the user filled out will come to your mail.
+<img src="README/Screenshot11.png">

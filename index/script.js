@@ -1,4 +1,4 @@
-// Форма обратной связи
+// Feedback form
 const form = document.getElementById("form");
 const username = document.getElementById("from_name");
 const email = document.getElementById("email_id");
@@ -34,18 +34,25 @@ form.addEventListener("submit", (event) => {
 
 	if (isValidUserEmail && isValidUserName && isValidNumber) {
 		document.getElementById("alert").classList.remove("visible");
-		sendButton.innerText = 'Отправление';
-		const serviceID = 'service_ditx1ga'; // Берётся из (Email Services -> Add New Service)
-		const templateID = 'template_j7jnes4'; // Берётся из (Email Templates -> My Default Template)
+
+		var sendButton = document.getElementById("send-button");
+		sendButton.innerText = 'Wait';
+		sendButton.disabled = true;
+		sendButton.classList.add("waiting");
+
+		const serviceID = 'service_ditx1ga';
+		const templateID = 'template_j7jnes4';
 		emailjs.sendForm(serviceID, templateID, form)
 			.then(() => {
-				sendButton.innerText = 'Отправить';
+				sendButton.innerText = 'Application accepted!';
+				sendButton.classList.add("not_allowed");
 				document.getElementById("from_name").value = "";
 				document.getElementById("email_id").value = "";
 				document.getElementById("tel_number").value = "";
 
 			}, (err) => {
-				sendButton.innerText = 'Отправить';
+				sendButton.innerText = 'Send';
+				sendButton.disabled = false;
 				alert(JSON.stringify(err));
 			});
 	} else {
@@ -53,19 +60,19 @@ form.addEventListener("submit", (event) => {
 	}
 })
 
-// Валидация(проверка) ввода полей
+// Validation (checking) of input fields
 function ValidateUsername(username) {
-	if (/^[А-ЯЁ а-яё A-Z a-z]+$/.test(username)) {
+	if (/^[A-Z a-z]{2,40}$/.test(username)) {
 		return (true)
 	}
 	return (false)
 }
 
 function ValidateEmail(mail) {
-	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-		return (true)
+	if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(mail)) {
+		return true;
 	}
-	return (false)
+	return false;
 }
 
 function ValidateNumber(tel) {
@@ -75,7 +82,7 @@ function ValidateNumber(tel) {
 	return (false)
 }
 
-// Маска номера телефона и перемещение курсора в начало ввода
+// Mask the phone number and move the cursor to the beginning of the input
 $.fn.setCursorPosition = function(pos) {
 	if ($(this).get(0).setSelectionRange) {
 		$(this).get(0).setSelectionRange(pos, pos);
@@ -100,6 +107,6 @@ function rightPos(phone) {
 $(".input_form_phone").click(function() {
 	let phone = $(this).val()
 	$(this).setCursorPosition(rightPos(phone));
-}).mask("+7 (999) 999-99-99", {
+}).mask("+1 (999) 999-99-99", {
 	autoclear: false
 });

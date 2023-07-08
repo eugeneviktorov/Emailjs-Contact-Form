@@ -1,4 +1,4 @@
-/* Основа страницы */
+/* Page base */
 html{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -9,7 +9,7 @@ a{
 a:hover{
     text-decoration: none;
 }
-/* БЛОК - Обратная связь */
+/* Feedback */
 .background_form{
     background-color: #F0F0F0;
     margin-top: 3em;
@@ -58,6 +58,9 @@ form {
 .isNotAlert.visible{
     display: block;
 }
+.isNotValid {
+    border: 3px solid #005AF5;
+}
 .closebtn{
     margin-left: 0px;
     color: #ffffff;
@@ -94,9 +97,15 @@ form {
     width: 10em;
     font-size: 1.1em;
 }
-.button:hover{
+.button:active{
     background-color: #162A4C;
+    transition: 0s;
 }
-.isNotValid {
-    border: 3px solid #005AF5;
+.button.waiting {
+    background-color: #777777;
+    cursor: wait;
+}
+.button.not_allowed {
+    background-color: #777777;
+    cursor: not-allowed;
 }
